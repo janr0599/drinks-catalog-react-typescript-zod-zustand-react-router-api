@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+import { useAppStore } from "../stores/useAppStore";
+
 function SearchRecipeForm() {
+    const { categories, fetchCategories } = useAppStore();
+
+    useEffect(() => {
+        fetchCategories();
+    }, []);
+
     return (
         <form
             action=""
@@ -33,6 +42,14 @@ function SearchRecipeForm() {
                     className="p-3 w-full rounded-lg focus:outline-none"
                 >
                     <option value="">-- Choose --</option>
+                    {categories.drinks.map((drink) => (
+                        <option
+                            key={drink.strCategory}
+                            value={drink.strCategory}
+                        >
+                            {drink.strCategory}
+                        </option>
+                    ))}
                 </select>
             </div>
 
