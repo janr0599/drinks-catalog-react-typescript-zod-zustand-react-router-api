@@ -7,6 +7,7 @@ export type RecipeSliceType = {
     fetchCategories: () => Promise<void>;
     recipes: Recipes;
     SearchRecipes: (searchFilters: SearchFilters) => Promise<void>;
+    hasRecipeInfo: boolean;
 };
 
 export const createRecipeSlice: StateCreator<RecipeSliceType> = (set) => ({
@@ -23,11 +24,17 @@ export const createRecipeSlice: StateCreator<RecipeSliceType> = (set) => ({
     recipes: {
         drinks: [],
     },
+    hasRecipeInfo: false,
     SearchRecipes: async (searchFilters) => {
+        set(() => ({
+            hasRecipeInfo: false,
+        }));
+
         const recipes = await getRecipes(searchFilters);
 
         set(() => ({
             recipes,
+            hasRecipeInfo: true,
         }));
     },
 });

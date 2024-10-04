@@ -88,7 +88,7 @@ function SearchRecipeForm() {
             <input
                 type="submit"
                 value="search recipes"
-                className="cursor-pointer bg-orange-800 hover:bg-orange-900 text-white font-extrabold rounded-lg w-full uppercase p-2"
+                className="btn cursor-pointer bg-orange-800 hover:bg-orange-900 text-white font-extrabold rounded-lg w-full uppercase p-2 transition-colors border-none"
             />
         </form>
     );

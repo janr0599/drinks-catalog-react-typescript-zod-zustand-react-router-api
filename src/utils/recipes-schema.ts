@@ -13,12 +13,12 @@ export const SearchFiltersSchema = z.object({
     category: z.string(),
 });
 
+export const RecipeResponseSchema = z.object({
+    idDrink: z.string(),
+    strDrink: z.string(),
+    strDrinkThumb: z.string(),
+});
+
 export const RecipesResponseSchema = z.object({
-    drinks: z.array(
-        z.object({
-            idDrink: z.string(),
-            strDrink: z.string(),
-            strDrinkThumb: z.string(),
-        })
-    ),
+    drinks: z.array(RecipeResponseSchema),
 });
