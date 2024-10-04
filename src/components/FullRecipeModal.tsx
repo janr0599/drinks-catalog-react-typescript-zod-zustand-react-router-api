@@ -90,6 +90,19 @@ export default function FullRecipeModal() {
                                     <p className="text-lg">
                                         {fullRecipe.strInstructions}
                                     </p>
+
+                                    <div className="mt-5 flex justify-between gap-4">
+                                        <button
+                                            className="btn flex-1 bg-gray-600 font-bold uppercase text-white hover:bg-gray-500"
+                                            onClick={closeModal}
+                                        >
+                                            close
+                                        </button>
+
+                                        <button className="btn flex-1 bg-orange-800 font-bold uppercase text-white  hover:bg-orange-900">
+                                            Add to Favorites
+                                        </button>
+                                    </div>
                                 </DialogPanel>
                             </TransitionChild>
                         </div>
