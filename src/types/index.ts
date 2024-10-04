@@ -1,5 +1,6 @@
 import { z } from "zod";
 import {
+    FullRecipeResponseSchema,
     RecipeCategoriesResponseSchema,
     RecipeResponseSchema,
     RecipesResponseSchema,
@@ -10,3 +11,4 @@ export type Categories = z.infer<typeof RecipeCategoriesResponseSchema>;
 export type SearchFilters = z.infer<typeof SearchFiltersSchema>;
 export type Recipes = z.infer<typeof RecipesResponseSchema>;
 export type Recipe = z.infer<typeof RecipeResponseSchema>;
+export type FullRecipe = z.infer<typeof FullRecipeResponseSchema>;

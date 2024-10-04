@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
+import FullRecipeModal from "../components/FullRecipeModal";
 
 function Layout() {
     return (
@@ -8,6 +9,8 @@ function Layout() {
             <main className="container mx-auto py-16">
                 <Outlet />
             </main>
+
+            <FullRecipeModal />
         </>
     );
 }
