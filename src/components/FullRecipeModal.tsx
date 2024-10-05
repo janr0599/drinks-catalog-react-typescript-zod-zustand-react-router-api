@@ -10,7 +10,13 @@ import { useAppStore } from "../stores/useAppStore";
 import { FullRecipe } from "../types";
 
 export default function FullRecipeModal() {
-    const { modal, closeModal, fullRecipe } = useAppStore();
+    const {
+        modal,
+        closeModal,
+        fullRecipe,
+        handleClickFavorite,
+        favoriteExists,
+    } = useAppStore();
 
     const renderIngredients = () => {
         const ingredients: JSX.Element[] = [];
@@ -99,8 +105,15 @@ export default function FullRecipeModal() {
                                             close
                                         </button>
 
-                                        <button className="btn flex-1 bg-orange-800 font-bold uppercase text-white  hover:bg-orange-900">
-                                            Add to Favorites
+                                        <button
+                                            className="btn flex-1 bg-orange-800 font-bold uppercase text-white  hover:bg-orange-900"
+                                            onClick={() =>
+                                                handleClickFavorite(fullRecipe)
+                                            }
+                                        >
+                                            {favoriteExists(fullRecipe.idDrink)
+                                                ? "Remove from favorite"
+                                                : "Add to Favorites"}
                                         </button>
                                     </div>
                                 </DialogPanel>

@@ -12,7 +12,7 @@ import {
     getFullRecipe,
 } from "../services/RecipeService";
 
-export type RecipeSliceType = {
+export type RecipesSliceType = {
     categories: Categories;
     fetchCategories: () => Promise<void>;
     recipes: Recipes;
@@ -24,7 +24,7 @@ export type RecipeSliceType = {
     closeModal: () => void;
 };
 
-export const createRecipeSlice: StateCreator<RecipeSliceType> = (set) => ({
+export const createRecipesSlice: StateCreator<RecipesSliceType> = (set) => ({
     categories: {
         drinks: [],
     },
