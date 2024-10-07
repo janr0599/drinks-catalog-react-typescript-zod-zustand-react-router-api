@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import FullRecipeModal from "../components/FullRecipeModal";
 import { useEffect } from "react";
 import { useAppStore } from "../stores/useAppStore";
+import Notification from "../components/Notification";
 
 function Layout() {
-    const { loadFromStorage, notification } = useAppStore();
+    const { loadFromStorage } = useAppStore();
 
     useEffect(() => {
         loadFromStorage();
@@ -19,6 +20,7 @@ function Layout() {
             </main>
 
             <FullRecipeModal />
+            <Notification />
         </>
     );
 }

@@ -3,7 +3,8 @@ import { useAppStore } from "../stores/useAppStore";
 import { SearchFilters } from "../types";
 
 function SearchRecipeForm() {
-    const { categories, fetchCategories, SearchRecipes } = useAppStore();
+    const { categories, fetchCategories, SearchRecipes, showNotification } =
+        useAppStore();
 
     const [searchFilters, setSearchFilters] = useState<SearchFilters>({
         ingredient: "",
@@ -24,7 +25,7 @@ function SearchRecipeForm() {
 
         // TODO: Validate
         if (Object.values(searchFilters).includes("")) {
-            console.log("All fields are required");
+            showNotification({ text: "All fields are required", error: true });
             return;
         }
 
