@@ -7,7 +7,7 @@ function IndexPage() {
     return (
         <>
             {!hasRecipeInfo ? (
-                <h2 className="text-4xl text-center font-bold mb-5">
+                <h2 className="text-4xl text-center font-bold mb-5 mx-5">
                     Recipes will show up here
                 </h2>
             ) : (
